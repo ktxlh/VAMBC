@@ -1,0 +1,9 @@
+ipywidgets
+matplotlib
+numpy
+pandarallel
+pandas
+pyarrow
+torch
+tqdm
+utm
