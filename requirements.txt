@@ -4,6 +4,7 @@ numpy
 pandarallel
 pandas
 pyarrow
+scikit-learn
 torch
 tqdm
 utm

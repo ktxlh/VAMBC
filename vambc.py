@@ -63,7 +63,7 @@ class Vambc(nn.Module):
         # Shape of xp: (batch_size, seq_len, dim_x)
         xp = self.lstm_decode(z, seq_len)
 
-        return y, zb, xc, xp
+        return y, zb, xc, xp, z
     
 
 def compute_entropy(y):
@@ -81,6 +81,7 @@ def compute_entropy(y):
     eps = 1e-9
     entropy = -torch.sum(y * torch.log(y + eps), dim=-1)
     return entropy
+
 
 def vambc_loss(x, y, zb, xc, xp):
     loss_recon = nn.functional.mse_loss(xp, x)
